@@ -1,6 +1,6 @@
 import { useState } from "react";
-import "./App.css";
 import PokemonCard from "./assets/components/PokemonCard";
+import "./App.css";
 
 function App() {
   const [count, setCount] = useState(0);
