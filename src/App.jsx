@@ -33,7 +33,7 @@ function App() {
   const [pokemonIndex, setPokemonIndex] = useState(0);
   return (
     <>
-      <div>
+      <div className="body">
         <PokemonCard pokemon={pokemonList[pokemonIndex]} />
         <Button
           pokemonIndex={pokemonIndex}
