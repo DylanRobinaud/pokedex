@@ -31,14 +31,19 @@ const pokemonList = [
 
 function App() {
   const [pokemonIndex, setPokemonIndex] = useState(0);
+  const handleclick = (index) => {
+    setPokemonIndex(index);
+  };
+
   return (
     <>
       <div className="body">
         <PokemonCard pokemon={pokemonList[pokemonIndex]} />
         <Button
+          pokemonList={pokemonList}
           pokemonIndex={pokemonIndex}
+          click={handleclick}
           setPokemonIndex={setPokemonIndex}
-          pokemonLength={pokemonList.length - 1}
         />
       </div>
     </>

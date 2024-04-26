@@ -1,40 +1,21 @@
-import PropTypes from "prop-types";
+import React from "react";
 
-function Button({ pokemonIndex, setPokemonIndex, pokemonLength }) {
+function Button({ pokemonList, click }) {
   return (
     <div className="buttons">
-      {pokemonIndex > 0 ? (
-        <button
-          className="button"
-          onClick={() => {
-            setPokemonIndex(pokemonIndex - 1);
-          }}
-        >
-          Précédent
-        </button>
-      ) : (
-        ""
-      )}
-      {pokemonIndex < pokemonLength - 1 ? (
-        <button
-          className="button"
-          onClick={() => {
-            setPokemonIndex(pokemonIndex + 1);
-          }}
-        >
-          Suivant
-        </button>
-      ) : (
-        ""
-      )}
+      {pokemonList.map((pokemonList, index) => {
+        return (
+          <button
+            className="button"
+            key={pokemonList.name}
+            onClick={() => click(index)}
+          >
+            {pokemonList.name}
+          </button>
+        );
+      })}
     </div>
   );
 }
-
-Button.propTypes = {
-  pokemonIndex: PropTypes.number.isRequired,
-  setPokemonIndex: PropTypes.number.isRequired,
-  pokemonLength: PropTypes.number.isRequired,
-};
 
 export default Button;
