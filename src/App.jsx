@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import PokemonCard from "./assets/components/PokemonCard";
 import Button from "./assets/components/NavBar";
 import "./App.css";
@@ -32,8 +32,15 @@ const pokemonList = [
 function App() {
   const [pokemonIndex, setPokemonIndex] = useState(0);
   const handleclick = (index) => {
+    if (pokemonList[index].name === "pikachu") {
+      alert("pika pikachu !!!");
+    }
     setPokemonIndex(index);
   };
+
+  useEffect(() => {
+    alert("hello pokemon trainer :)");
+  }, []);
 
   return (
     <>
